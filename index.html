@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <body
+    style="
+      text-align: center;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: antiquewhite;
+    "
+  >
+    <div
+      class="wrapper"
+      style="
+        width: 250px;
+        height: 250px;
+        border: 1px solid black;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 12px;
+      "
+    >
+      <h1>Calculator</h1>
+      <div class="data">
+        <input type="text" id="input" />
+      </div>
+      <div
+        class="buttons"
+        style="
+          display: flex;
+          gap: 12px;
+          flex-wrap: wrap;
+          justify-content: center;
+        "
+      >
+        <button id="btn" onclick="nill()">1</button>
+        <button
+          id="btn"
+          onclick="currdisplay = currdisplay + '2'; document.getElementById('input').value = currdisplay;"
+        >
+          2
+        </button>
+        <button
+          id="btn"
+          onclick="currdisplay = currdisplay + '3'; document.getElementById('input').value = currdisplay;"
+        >
+          3
+        </button>
+        <button
+          id="btn"
+          onclick="currdisplay = currdisplay + '4'; document.getElementById('input').value = currdisplay;"
+        >
+          4
+        </button>
+        <button
+          id="btn"
+          onclick="currdisplay = currdisplay + '5'; document.getElementById('input').value = currdisplay;"
+        >
+          5
+        </button>
+        <button
+          id="btn"
+          onclick="currdisplay = currdisplay + '6'; document.getElementById('input').value = currdisplay;"
+        >
+          6
+        </button>
+        <button
+          id="btn"
+          onclick="currdisplay = currdisplay + '7'; document.getElementById('input').value = currdisplay;"
+        >
+          7
+        </button>
+        <button
+          id="btn"
+          onclick="currdisplay = currdisplay + '8'; document.getElementById('input').value = currdisplay;"
+        >
+          8
+        </button>
+        <button
+          id="btn"
+          onclick="currdisplay = currdisplay + '9'; document.getElementById('input').value = currdisplay;"
+        >
+          9
+        </button>
+        <button
+          id="btn"
+          onclick="currdisplay = currdisplay + '0'; document.getElementById('input').value = currdisplay;"
+        >
+          0
+        </button>
+        <button
+          id="btn"
+          onclick="currdisplay = currdisplay + '+'; document.getElementById('input').value = currdisplay;"
+        >
+          +
+        </button>
+        <button
+          id="btn"
+          onclick="currdisplay = eval(currdisplay) ; document.getElementById('input').value = currdisplay;"
+        >
+          =
+        </button>
+        <button
+          id="btn"
+          onclick="currdisplay = currdisplay + '-'; document.getElementById('input').value = currdisplay;"
+        >
+          -
+        </button>
+        <button
+          id="btn"
+          onclick="currdisplay = currdisplay + '*'; document.getElementById('input').value = currdisplay;"
+        >
+          *
+        </button>
+        <button
+          id="btn"
+          onclick="currdisplay = currdisplay + '%'; document.getElementById('input').value = currdisplay;"
+        >
+          %
+        </button>
+        <button
+          id="btn"
+          onclick="currdisplay = currdisplay + '/'; document.getElementById('input').value = currdisplay;"
+        >
+          /
+        </button>
+        <button
+          id="btn"
+          onclick="currdisplay =  ''; document.getElementById('input').value = currdisplay;"
+        >
+          C
+        </button>
+      </div>
+    </div>
+    <script>
+      let currdisplay = "";
+      const data = document.getElementById("input");
+
+      function nill() {
+        const btn = document.querySelectorAll("#btn");
+        let val = data.value;
+
+        btn.forEach((e, i) => {
+          e.addEventListener("click", () => {
+            val = btn[i];
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
